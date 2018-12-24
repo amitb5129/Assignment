@@ -8,6 +8,8 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		ArrayList<String> arr = Methods.readappCSV("D:\\Data\\MyCSV1.csv", "D:\\Data\\MyCSV2.csv", 1);
-		System.out.println(arr);
+		
+		System.out.println("CSV1 consists of Appropriate Data");
+		System.out.println("Roll Nos with Mismatched Data: "+ arr);
 	}
 }
