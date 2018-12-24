@@ -11,8 +11,8 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
 public class Methods {
-	// This Function reads the csv Line by Line.
-	// The Second parameter is used to Match it to the Original CSV.
+	// This method reads the csv Line by Line.
+	//This is actually the improper Data file method. which needs to be mapped to correct Data File.
 	public static boolean readCSV(File filename2, int param, String[] datatoMatch) throws IOException {
 		CSVReader csvreader = new CSVReader(new FileReader(filename2));
 		boolean flag = false;
@@ -26,7 +26,9 @@ public class Methods {
 		}
 		return flag;
 	}
-
+	
+	
+//This method. reads the csv data all at once and then passes the data as per id one by one.
 	public static ArrayList<String> readappCSV(String filename1, String filename2,int index) throws IOException {
 		CSVReader reader = new CSVReaderBuilder(new FileReader(filename1)).withSkipLines(1).build();
 		List<String[]> alldata = reader.readAll();
@@ -40,6 +42,8 @@ public class Methods {
 		return arr;
 	}
 
+	//This method is used to check whether the data in both the Files for the record passed is
+	// same or Different.
 	public static boolean mapBothFilesData(String[] csv1, String[] csv2) {
 		for (int i = 0; i < csv1.length; i++) {
 			if (csv1[i].equals(csv2[i])) {
